@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href=""?>
+
+<plugin>
+    <name>Client</name>
+    <displayName>Client Delivery Rules Plugin</displayName>
+    <creationDate>2016-09-13</creationDate>
+    <author>Revive Adserver</author>
+    <authorEmail>revive@revive-adserver.com</authorEmail>
+    <authorUrl>http://www.revive-adserver.com</authorUrl>
+    <license>LICENSE.txt</license>
+    <description>Plugin that provides the ability to limit delivery of ads by client.</description>
+    <version>2.2.0</version>
+    <oxversion>4.1.0-dev</oxversion>
+    <extends>deliveryLimitations</extends>
+
+    <install>
+        <files>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">initClientData.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Browser.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Browser.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">BrowserVersion.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">BrowserVersion.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Domain.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Domain.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Ip.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Ip.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Language.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Language.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Language.res.inc.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Os.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Os.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Os.res.inc.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">OsVersion.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">OsVersion.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">OsVersion.res.inc.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Useragent.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Client/">Useragent.delivery.php</file>
+
+        </files>
+
+        <components>
+            <component><name>initClientData</name><hook>postInit</hook></component>
+            <component><name>Browser</name></component>
+            <component><name>Domain</name></component>
+            <component><name>Ip</name></component>
+            <component><name>Language</name></component>
+            <component><name>Os</name></component>
+            <component><name>Useragent</name></component>
+        </components>
+
+        <configuration option="Browser Limitations">
+            <setting key="sniff" type="checkbox" label="Extract the viewer's operating system and web browser information using phpSniff" required="0" size="0" visible="1">true</setting>
+        </configuration>
+
+    </install>
+
+</plugin>

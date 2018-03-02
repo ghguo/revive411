@@ -1,0 +1,53 @@
+{
+    "name": "revive-adserver/revive-adserver",
+    "description": "The world's most popular free, open source ad serving system",
+    "type": "project",
+    "license": "GNU GPLv2",
+    "authors": [
+        {
+            "name": "The Revive Adserver Team",
+            "email": "revive@revive-adserver.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "vendor-dir": "lib/vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "RV\\": "lib/RV/"
+        }
+    },
+    "require": {
+        "symfony/config": "^3.3",
+        "symfony/dependency-injection": "^3.3",
+        "league/flysystem": "^1.0",
+        "league/flysystem-ziparchive": "^1.0",
+
+        "sinergi/browser-detector": "^6.0",
+        "jeremykendall/php-domain-parser": "~2.0",
+
+        "figdice/asseteer": "dev-master",
+        "tinymce/tinymce": "^4.6"
+    },
+    "require-dev": {
+        "symfony/finder": "^3.3"
+    },
+    "extra": {
+        "post-install-asseteer": [
+            {
+                "vendor": "tinymce",
+                "target": "www/admin/assets",
+                "filters": [ "\\.min.(js|css)$", "\\.(eot|ttf|svg|woff)" ]
+            }
+        ]
+    },
+    "scripts" :{
+        "post-install-cmd": [
+            "asseteer\\AssetInstaller::postInstall"
+        ],
+        "post-update-cmd": [
+            "asseteer\\AssetInstaller::postInstall"
+        ]
+    }
+}

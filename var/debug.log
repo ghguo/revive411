@@ -1,0 +1,466 @@
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_account_preference_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table account_preference_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_account_user_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table account_user_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_account_user_permission_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table account_user_permission_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_accounts
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table accounts
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_acls
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table acls
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_acls_channel
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table acls_channel
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_ad_category_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table ad_category_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_ad_zone_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table ad_zone_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_affiliates
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table affiliates
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_affiliates_extra
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table affiliates_extra
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_agency
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table agency
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_application_variable
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table application_variable
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_audit
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table audit
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_banners
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table banners
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_campaigns
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table campaigns
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_campaigns_trackers
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table campaigns_trackers
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_category
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table category
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_channel
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table channel
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_clients
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table clients
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_intermediate_ad
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_intermediate_ad
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_intermediate_ad_connection
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_intermediate_ad_connection
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_intermediate_ad_variable_value
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_intermediate_ad_variable_value
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_raw_ad_click
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_raw_ad_click
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_raw_ad_impression
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_raw_ad_impression
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_raw_ad_request
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_raw_ad_request
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_raw_tracker_impression
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_raw_tracker_impression
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_raw_tracker_variable_value
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_raw_tracker_variable_value
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_summary_ad_hourly
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_summary_ad_hourly
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_summary_ad_zone_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_summary_ad_zone_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_summary_channel_daily
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_summary_channel_daily
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_data_summary_zone_impression_history
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table data_summary_zone_impression_history
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_images
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table images
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_log_maintenance_forecasting
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table log_maintenance_forecasting
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_log_maintenance_priority
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table log_maintenance_priority
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_log_maintenance_statistics
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table log_maintenance_statistics
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_password_recovery
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table password_recovery
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_placement_zone_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table placement_zone_assoc
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_preferences
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table preferences
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_session
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table session
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_targetstats
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table targetstats
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_tracker_append
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table tracker_append
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_trackers
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table trackers
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_userlog
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table userlog
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_users
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table users
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_variable_publisher
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table variable_publisher
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_variables
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table variables
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop table rv_zones
+Dec 18 22:06:36 +0000 OX-5a383bec7402a [    error]  Unable to drop the table zones
+Dec 18 22:06:55 +0000 OX-plugins-5a383bffe7a9c [     info]  starting _checkPackageContents openXBannerTypes.xml
+Dec 18 22:06:55 +0000 OX-plugins-5a383bffe7a9c [     info]  expecting definition openXBannerTypes.xml
+Dec 18 22:06:55 +0000 OX-plugins-5a383bffe7a9c [     info]  detected plugin definition file /plugins/etc/openXBannerTypes.xml
+Dec 18 22:06:55 +0000 OX-plugins-5a383bffe7a9c [     info]  detected group definition file /plugins/etc/oxText/oxText.xml
+Dec 18 22:06:55 +0000 OX-plugins-5a383bffe7a9c [     info]  detected group definition file /plugins/etc/oxHtml/oxHtml.xml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkOpenXCompatibility for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkSystemEnvironment for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkDatabaseEnvironment for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _runScript for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkDependenciesForInstallOrEnable for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkFiles for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkNavigationCheckers for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkMenus for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _registerSchema for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _registerPreferences for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _registerSettings for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing disableComponentGroup for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _registerPluginVersion for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _runScript for oxHtml
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkOpenXCompatibility for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkSystemEnvironment for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkDatabaseEnvironment for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _runScript for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkDependenciesForInstallOrEnable for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkFiles for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkNavigationCheckers for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _checkMenus for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _registerSchema for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _registerPreferences for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _registerSettings for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing disableComponentGroup for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _registerPluginVersion for oxText
+Dec 18 22:06:56 +0000 OX-plugins-5a383bffe7a9c [     info]  Executing _runScript for oxText
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  starting _checkPackageContents openXDeliveryLimitations.xml
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  expecting definition openXDeliveryLimitations.xml
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  detected group definition file /plugins/etc/Time/Time.xml
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  detected group definition file /plugins/etc/Site/Site.xml
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  detected group definition file /plugins/etc/Client/Client.xml
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  detected plugin definition file /plugins/etc/openXDeliveryLimitations.xml
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  detected group definition file /plugins/etc/Geo/Geo.xml
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkOpenXCompatibility for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkSystemEnvironment for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkDatabaseEnvironment for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _runScript for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkDependenciesForInstallOrEnable for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkFiles for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkNavigationCheckers for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkMenus for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerSchema for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerPreferences for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerSettings for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing disableComponentGroup for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerPluginVersion for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _runScript for Client
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkOpenXCompatibility for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkSystemEnvironment for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkDatabaseEnvironment for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _runScript for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkDependenciesForInstallOrEnable for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkFiles for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkNavigationCheckers for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkMenus for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerSchema for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerPreferences for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerSettings for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing disableComponentGroup for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerPluginVersion for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _runScript for Geo
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkOpenXCompatibility for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkSystemEnvironment for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkDatabaseEnvironment for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _runScript for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkDependenciesForInstallOrEnable for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkFiles for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkNavigationCheckers for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkMenus for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerSchema for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerPreferences for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerSettings for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing disableComponentGroup for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerPluginVersion for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _runScript for Site
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkOpenXCompatibility for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkSystemEnvironment for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkDatabaseEnvironment for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _runScript for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkDependenciesForInstallOrEnable for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkFiles for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkNavigationCheckers for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _checkMenus for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerSchema for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerPreferences for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerSettings for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing disableComponentGroup for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _registerPluginVersion for Time
+Dec 18 22:06:58 +0000 OX-plugins-5a383c02a0f73 [     info]  Executing _runScript for Time
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  starting _checkPackageContents openX3rdPartyServers.xml
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  expecting definition openX3rdPartyServers.xml
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  detected plugin definition file /plugins/etc/openX3rdPartyServers.xml
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  detected group definition file /plugins/etc/ox3rdPartyServers/ox3rdPartyServers.xml
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _checkOpenXCompatibility for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _checkSystemEnvironment for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _checkDatabaseEnvironment for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _runScript for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _checkDependenciesForInstallOrEnable for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _checkFiles for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _checkNavigationCheckers for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _checkMenus for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _registerSchema for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _registerPreferences for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _registerSettings for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing disableComponentGroup for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _registerPluginVersion for ox3rdPartyServers
+Dec 18 22:07:01 +0000 OX-plugins-5a383c056d843 [     info]  Executing _runScript for ox3rdPartyServers
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  starting _checkPackageContents openXReports.xml
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  expecting definition openXReports.xml
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  detected group definition file /plugins/etc/oxReportsAdmin/oxReportsAdmin.xml
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  detected plugin definition file /plugins/etc/openXReports.xml
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  detected group definition file /plugins/etc/oxReportsStandard/oxReportsStandard.xml
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkOpenXCompatibility for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkSystemEnvironment for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkDatabaseEnvironment for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _runScript for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkDependenciesForInstallOrEnable for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkFiles for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkNavigationCheckers for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkMenus for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _registerSchema for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _registerPreferences for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _registerSettings for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing disableComponentGroup for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _registerPluginVersion for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _runScript for oxReportsStandard
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkOpenXCompatibility for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkSystemEnvironment for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkDatabaseEnvironment for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _runScript for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkDependenciesForInstallOrEnable for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkFiles for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkNavigationCheckers for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _checkMenus for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _registerSchema for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _registerPreferences for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _registerSettings for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing disableComponentGroup for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _registerPluginVersion for oxReportsAdmin
+Dec 18 22:07:04 +0000 OX-plugins-5a383c0814044 [     info]  Executing _runScript for oxReportsAdmin
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  starting _checkPackageContents openXDeliveryCacheStore.xml
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  expecting definition openXDeliveryCacheStore.xml
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  detected group definition file /plugins/etc/oxMemcached/oxMemcached.xml
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  detected plugin definition file /plugins/etc/openXDeliveryCacheStore.xml
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  detected group definition file /plugins/etc/oxCacheFile/oxCacheFile.xml
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkOpenXCompatibility for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkSystemEnvironment for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkDatabaseEnvironment for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _runScript for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkDependenciesForInstallOrEnable for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkFiles for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkNavigationCheckers for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkMenus for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _registerSchema for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _registerPreferences for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _registerSettings for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing disableComponentGroup for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _registerPluginVersion for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _runScript for oxCacheFile
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkOpenXCompatibility for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkSystemEnvironment for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkDatabaseEnvironment for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _runScript for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkDependenciesForInstallOrEnable for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkFiles for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkNavigationCheckers for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _checkMenus for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _registerSchema for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _registerPreferences for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _registerSettings for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing disableComponentGroup for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _registerPluginVersion for oxMemcached
+Dec 18 22:07:06 +0000 OX-plugins-5a383c0ab5be4 [     info]  Executing _runScript for oxMemcached
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  starting _checkPackageContents openXMaxMindGeoIP.xml
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  expecting definition openXMaxMindGeoIP.xml
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  detected plugin definition file /plugins/etc/openXMaxMindGeoIP.xml
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  detected group definition file /plugins/etc/oxMaxMindGeoIP/oxMaxMindGeoIP.xml
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _checkOpenXCompatibility for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _checkSystemEnvironment for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _checkDatabaseEnvironment for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _runScript for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _checkDependenciesForInstallOrEnable for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _checkFiles for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _checkNavigationCheckers for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _checkMenus for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _registerSchema for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _registerPreferences for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _registerSettings for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing disableComponentGroup for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _registerPluginVersion for oxMaxMindGeoIP
+Dec 18 22:07:09 +0000 OX-plugins-5a383c0d5e9c0 [     info]  Executing _runScript for oxMaxMindGeoIP
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  starting _checkPackageContents openXInvocationTags.xml
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  expecting definition openXInvocationTags.xml
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  detected group definition file /plugins/etc/oxInvocationTags/oxInvocationTags.xml
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  detected plugin definition file /plugins/etc/openXInvocationTags.xml
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _checkOpenXCompatibility for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _checkSystemEnvironment for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _checkDatabaseEnvironment for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _runScript for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _checkDependenciesForInstallOrEnable for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _checkFiles for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _checkNavigationCheckers for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _checkMenus for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _registerSchema for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _registerPreferences for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _registerSettings for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing disableComponentGroup for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _registerPluginVersion for oxInvocationTags
+Dec 18 22:07:12 +0000 OX-plugins-5a383c10092f6 [     info]  Executing _runScript for oxInvocationTags
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  starting _checkPackageContents openXDeliveryLog.xml
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  expecting definition openXDeliveryLog.xml
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  detected plugin definition file /plugins/etc/openXDeliveryLog.xml
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  detected group definition file /plugins/etc/oxLogRequest/oxLogRequest.xml
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  detected group definition file /plugins/etc/oxLogConversion/oxLogConversion.xml
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  detected group definition file /plugins/etc/oxLogImpression/oxLogImpression.xml
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  detected group definition file /plugins/etc/oxLogClick/oxLogClick.xml
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  detected group definition file /plugins/etc/oxDeliveryDataPrepare/oxDeliveryDataPrepare.xml
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkOpenXCompatibility for oxDeliveryDataPrepare
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkSystemEnvironment for oxDeliveryDataPrepare
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkDatabaseEnvironment for oxDeliveryDataPrepare
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _runScript for oxDeliveryDataPrepare
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkDependenciesForInstallOrEnable for oxDeliveryDataPrepare
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkFiles for oxDeliveryDataPrepare
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkNavigationCheckers for oxDeliveryDataPrepare
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkMenus for oxDeliveryDataPrepare
+Dec 18 22:07:14 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerSchema for oxDeliveryDataPrepare
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerPreferences for oxDeliveryDataPrepare
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerSettings for oxDeliveryDataPrepare
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing disableComponentGroup for oxDeliveryDataPrepare
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerPluginVersion for oxDeliveryDataPrepare
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _runScript for oxDeliveryDataPrepare
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkOpenXCompatibility for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkSystemEnvironment for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkDatabaseEnvironment for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _runScript for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkDependenciesForInstallOrEnable for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkFiles for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkNavigationCheckers for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkMenus for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerSchema for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerPreferences for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerSettings for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing disableComponentGroup for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerPluginVersion for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _runScript for oxLogClick
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkOpenXCompatibility for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkSystemEnvironment for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkDatabaseEnvironment for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _runScript for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkDependenciesForInstallOrEnable for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkFiles for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkNavigationCheckers for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkMenus for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerSchema for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerPreferences for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerSettings for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing disableComponentGroup for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerPluginVersion for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _runScript for oxLogConversion
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkOpenXCompatibility for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkSystemEnvironment for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkDatabaseEnvironment for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _runScript for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkDependenciesForInstallOrEnable for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkFiles for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkNavigationCheckers for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkMenus for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerSchema for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerPreferences for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerSettings for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing disableComponentGroup for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerPluginVersion for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _runScript for oxLogImpression
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkOpenXCompatibility for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkSystemEnvironment for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkDatabaseEnvironment for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _runScript for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkDependenciesForInstallOrEnable for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkFiles for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkNavigationCheckers for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _checkMenus for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerSchema for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerPreferences for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerSettings for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing disableComponentGroup for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _registerPluginVersion for oxLogRequest
+Dec 18 22:07:15 +0000 OX-plugins-5a383c12b9a4d [     info]  Executing _runScript for oxLogRequest
+Dec 18 22:07:17 +0000 OX-plugins-5a383c15e9750 [     info]  starting _checkPackageContents openXVideoAds.xml
+Dec 18 22:07:17 +0000 OX-plugins-5a383c15e9750 [     info]  expecting definition openXVideoAds.xml
+Dec 18 22:07:17 +0000 OX-plugins-5a383c15e9750 [     info]  detected group definition file /plugins/etc/videoReport/videoReport.xml
+Dec 18 22:07:17 +0000 OX-plugins-5a383c15e9750 [     info]  detected group definition file /plugins/etc/oxLogVast/oxLogVast.xml
+Dec 18 22:07:17 +0000 OX-plugins-5a383c15e9750 [     info]  detected plugin definition file /plugins/etc/openXVideoAds.xml
+Dec 18 22:07:17 +0000 OX-plugins-5a383c15e9750 [     info]  detected group definition file /plugins/etc/vastInlineBannerTypeHtml/vastInlineBannerTypeHtml.xml
+Dec 18 22:07:17 +0000 OX-plugins-5a383c15e9750 [     info]  detected group definition file /plugins/etc/vastServeVideoPlayer/vastServeVideoPlayer.xml
+Dec 18 22:07:17 +0000 OX-plugins-5a383c15e9750 [     info]  detected group definition file /plugins/etc/vastOverlayBannerTypeHtml/vastOverlayBannerTypeHtml.xml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkOpenXCompatibility for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkSystemEnvironment for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkDatabaseEnvironment for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _runScript for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkDependenciesForInstallOrEnable for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkFiles for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkNavigationCheckers for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkMenus for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerSchema for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerPreferences for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerSettings for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing disableComponentGroup for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerPluginVersion for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _runScript for vastInlineBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkOpenXCompatibility for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkSystemEnvironment for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkDatabaseEnvironment for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _runScript for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkDependenciesForInstallOrEnable for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkFiles for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkNavigationCheckers for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkMenus for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerSchema for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerPreferences for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerSettings for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing disableComponentGroup for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerPluginVersion for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _runScript for vastOverlayBannerTypeHtml
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkOpenXCompatibility for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkSystemEnvironment for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkDatabaseEnvironment for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _runScript for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkDependenciesForInstallOrEnable for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkFiles for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkNavigationCheckers for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkMenus for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerSchema for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerPreferences for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerSettings for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing disableComponentGroup for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerPluginVersion for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _runScript for oxLogVast
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkOpenXCompatibility for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkSystemEnvironment for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkDatabaseEnvironment for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _runScript for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkDependenciesForInstallOrEnable for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkFiles for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkNavigationCheckers for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkMenus for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerSchema for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerPreferences for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerSettings for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing disableComponentGroup for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerPluginVersion for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _runScript for vastServeVideoPlayer
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkOpenXCompatibility for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkSystemEnvironment for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkDatabaseEnvironment for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _runScript for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkDependenciesForInstallOrEnable for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkFiles for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkNavigationCheckers for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _checkMenus for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerSchema for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerPreferences for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerSettings for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing disableComponentGroup for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _registerPluginVersion for videoReport
+Dec 18 22:07:18 +0000 OX-plugins-5a383c15e9750 [     info]  Executing _runScript for videoReport
