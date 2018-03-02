@@ -3300,7 +3300,7 @@ function GetPromotionByContent($content, $aBanner)
 	        'bannerId' => $aBanner['ad_id'],
 	        'publisher' => $_POST['publisher'],
 	        'promoter' => $pm,
-            'location' => $_REQUEST['loc'],
+			'location' => $_REQUEST['loc'],
 			'latitude' => $GLOBALS['_MAX']['CLIENT_GEO']['latitude'],
 			'longitude' => $GLOBALS['_MAX']['CLIENT_GEO']['longitude']
 	    )
