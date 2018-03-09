@@ -116,6 +116,7 @@ function revivefn(d, c, cq) {
 						var e = "http:" === d.location.protocol ? "<?php echo MAX_commonConstructDeliveryUrl($GLOBALS['_MAX']['CONF']['file']['asyncspc']); ?>" : "<?php echo MAX_commonConstructSecureDeliveryUrl($GLOBALS['_MAX']['CONF']['file']['asyncspc']); ?>";
 						g.zones = g.zones.join("|");
 						g.promoters = g.promoters.join("|");
+						g.promotions = g.promotions.join("|");
 						g.loc = d.location.href;
 						if (d.referrer) {
 							g.referer = d.referrer
@@ -134,6 +135,7 @@ function revivefn(d, c, cq) {
 					var l = {
 						zones: [],
 						promoters: [],
+						promotions: [],
 						prefix: f.name + "-" + f.id + "-"
 					};
 					for (var r = 0; r < e.length; r++) {
@@ -162,6 +164,8 @@ function revivefn(d, c, cq) {
 										l.zones[s] = n.attributes[h].value
 									} else if ("promoter" == g[1]) {
 										l.promoters[s] = n.attributes[h].value;
+									} else if ("promotion" == g[1]) {
+										l.promotions[s] = n.attributes[h].value;
 									} else {
 										if (!(/^(id|seq|loaded)$/).test(g[1])) {
 											l[g[1]] = n.attributes[h].value

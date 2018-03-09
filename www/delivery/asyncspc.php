@@ -3205,7 +3205,7 @@ return !empty($GLOBALS['_MAX']['COOKIE']['newViewerId']) && $filterActive;
 }
 
 
-function MAX_adRender(&$aBanner, $zoneId=0, $source='', $target='', $ct0='', $withText=false, $charset = '', $logClick=true, $logView=true, $richMedia=true, $loc='', $referer='', &$context = array())
+function MAX_adRender(&$aBanner, $zoneId=0, $source='', $target='', $ct0='', $withText=false, $charset = '', $logClick=true, $logView=true, $richMedia=true, $loc='', $referer='', &$context = array(), $id=0)
 {
 $conf = $GLOBALS['_MAX']['CONF'];
 if (empty($target)) {
@@ -3274,24 +3274,20 @@ $aBanner['logUrl'] = $logUrl;
 $aBanner['aSearch'] = $search;
 $aBanner['aReplace'] = $replace;
 OX_Delivery_Common_hook('postAdRender', array(&$code, $aBanner, &$context));
-if (!empty($_POST['q']) && !empty($_POST['promotion'])) {
-	$promo = GetPromotionByContent(trim($_POST['q']), $aBanner);
+if (!empty($_POST['q'])) {
+	$promo = GetPromotionByContent(trim($_POST['q']), $aBanner, $id);
 	if (!empty($promo)){
 		$code = WithPromotion($promo, $aBanner, $code);
 	}
 } 
 return MAX_commonConvertEncoding($code, $charset);
 }
-function GetPromotionByContent($content, $aBanner)
+function GetPromotionByContent($content, $aBanner, $id=0)
 {
-	$zs = explode('|', $_POST['zones']);
 	$ps = explode('|', $_POST['promoters']);
-	for ($i = 0; $i < count($zs); $i++) {
-		if ($zs[$i] == $aBanner['zoneid']) {
-			$pm = $ps[$i];
-			break;
-		}
-	}
+	$pns = explode('|', $_POST['promotions']);
+	$pm = $ps[$id];
+	$pn = $pns[$id];
 	
 	$postdata = http_build_query(
 	    array(
@@ -3300,7 +3296,8 @@ function GetPromotionByContent($content, $aBanner)
 	        'bannerId' => $aBanner['ad_id'],
 	        'publisher' => $_POST['publisher'],
 	        'promoter' => $pm,
-			'location' => $_REQUEST['loc'],
+	        'promotion' => $pn,
+            'location' => $_REQUEST['loc'],
 			'latitude' => $GLOBALS['_MAX']['CLIENT_GEO']['latitude'],
 			'longitude' => $GLOBALS['_MAX']['CLIENT_GEO']['longitude']
 	    )
@@ -3712,7 +3709,7 @@ return $functionName;
 define ("PRI_ECPM_FROM", 6);
 define ("PRI_ECPM_TO", 9);
 $GLOBALS['OX_adSelect_SkipOtherPriorityLevels'] = -1;
-function MAX_adSelect($what, $campaignid = '', $target = '', $source = '', $withtext = 0, $charset = '', $context = array(), $richmedia = true, $ct0 = '', $loc = '', $referer = '')
+function MAX_adSelect($what, $campaignid = '', $target = '', $source = '', $withtext = 0, $charset = '', $context = array(), $richmedia = true, $ct0 = '', $loc = '', $referer = '', $id=0)
 {
 $conf = $GLOBALS['_MAX']['CONF'];
 if (empty($GLOBALS['source'])) {
@@ -3798,7 +3795,7 @@ $row['append'] .= $ad['append'];
 }
 }
 }
-$outputbuffer = MAX_adRender($row, $zoneId, $source, $target, $ct0, $withtext, $charset, true, true, $richmedia, $loc, $referer, $context);
+$outputbuffer = MAX_adRender($row, $zoneId, $source, $target, $ct0, $withtext, $charset, true, true, $richmedia, $loc, $referer, $context, $id);
 $output = array(
 'html' => $outputbuffer,
 'bannerid' => $row['bannerid'],
@@ -4424,7 +4421,7 @@ continue;
 $zonename = $prefix.$id;
 unset($GLOBALS['_MAX']['deliveryData']);
 $what = 'zone:'.$thisZoneid;
-$output = MAX_adSelect($what, $clientid, $target, $source, $withtext, $charset, $context, true, $ct0, $GLOBALS['loc'], $GLOBALS['referer']);
+$output = MAX_adSelect($what, $clientid, $target, $source, $withtext, $charset, $context, true, $ct0, $GLOBALS['loc'], $GLOBALS['referer'], $id);
 $spc_output[$zonename] = array(
 'html' => $output['html'],
 'width' => isset($output['width']) ? $output['width'] : 0,
