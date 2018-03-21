@@ -117,6 +117,7 @@ function revivefn(d, c, cq) {
 						g.zones = g.zones.join("|");
 						g.promoters = g.promoters.join("|");
 						g.promotions = g.promotions.join("|");
+						g.publishers = g.publishers.join("|");
 						g.loc = d.location.href;
 						if (d.referrer) {
 							g.referer = d.referrer
@@ -136,6 +137,7 @@ function revivefn(d, c, cq) {
 						zones: [],
 						promoters: [],
 						promotions: [],
+						publishers: [],
 						prefix: f.name + "-" + f.id + "-"
 					};
 					for (var r = 0; r < e.length; r++) {
@@ -166,6 +168,8 @@ function revivefn(d, c, cq) {
 										l.promoters[s] = n.attributes[h].value;
 									} else if ("promotion" == g[1]) {
 										l.promotions[s] = n.attributes[h].value;
+									} else if ("publisher" == g[1]) {
+										l.publishers[s] = n.attributes[h].value;
 									} else {
 										if (!(/^(id|seq|loaded)$/).test(g[1])) {
 											l[g[1]] = n.attributes[h].value

@@ -3286,15 +3286,17 @@ function GetPromotionByContent($content, $aBanner, $id=0)
 {
 	$ps = explode('|', $_POST['promoters']);
 	$pns = explode('|', $_POST['promotions']);
+	$pbs = explode('|', $_POST['publishers']);
 	$pm = $ps[$id];
 	$pn = $pns[$id];
+	$pb = $pbs[$id];
 	
 	$postdata = http_build_query(
 	    array(
 	        'q' => $content,
 	        'zoneId' => $aBanner['zoneid'],
 	        'bannerId' => $aBanner['ad_id'],
-	        'publisher' => $_POST['publisher'],
+	        'publisher' => $pb,
 	        'promoter' => $pm,
 	        'promotion' => $pn,
             'location' => $_REQUEST['loc'],
