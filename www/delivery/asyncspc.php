@@ -4416,7 +4416,7 @@ $source = MAX_commonDeriveSource($source);
 $spc_output = [];
 if(!empty($zones)) {
 $db = $GLOBALS['_MAX']['CONF']['oxMaxMindGeoIP']['geoipCityLocation'];
-$addr = $_SERVER['HTTP_CLIENT_IP']?$_SERVER['HTTP_CLIENT_IP']:($_SERVER['HTTP_X_FORWARDED_FOR']?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
+$addr = $GLOBALS['_MAX']['CLIENT']['ip'];
 $return = call_user_func_array('oxMaxMind_getGeo', array($addr, $db));
 $GLOBALS['_MAX']['CLIENT_GEO']['CDP'] = $return;
 
