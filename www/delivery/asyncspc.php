@@ -3300,8 +3300,8 @@ function GetPromotionByContent($content, $aBanner, $id=0)
 	        'promoter' => $pm,
 	        'promotion' => $pn,
             'location' => $_REQUEST['loc'],
-			'latitude' => $GLOBALS['_MAX']['CLIENT_GEO']['CDP']['latitude'],
-			'longitude' => $GLOBALS['_MAX']['CLIENT_GEO']['CDP']['longitude']
+			'latitude' => $GLOBALS['_MAX']['CLIENT_GEO']['latitude'],
+			'longitude' => $GLOBALS['_MAX']['CLIENT_GEO']['longitude']
 	    )
 	);
 
@@ -4415,11 +4415,6 @@ exit;
 $source = MAX_commonDeriveSource($source);
 $spc_output = [];
 if(!empty($zones)) {
-$db = $GLOBALS['_MAX']['CONF']['oxMaxMindGeoIP']['geoipCityLocation'];
-$addr = $GLOBALS['_MAX']['CLIENT']['ip'];
-$return = call_user_func_array('oxMaxMind_getGeo', array($addr, $db));
-$GLOBALS['_MAX']['CLIENT_GEO']['CDP'] = $return;
-
 $zones = explode('|', $zones);
 foreach ($zones as $id => $thisZoneid) {
 if (empty($thisZoneid)) {
