@@ -63,15 +63,21 @@ function revivefn(d, c, cq) {
 					if (c.cq != "") {
 						mt = d.getElementsByTagName('meta');
 						kw = "";
+						mtdes = "";
 						if (mt.length > 0) {
 							for (i = 0; i < mt.length; i++) {
 								if (mt[i].getAttribute("name") == "keywords") {
 									kw = mt[i].getAttribute("content");
-									continue;
+								}
+								else if (mt[i].getAttribute("name") == "description") {
+									mtdes = mt[i].getAttribute("content");
 								}
 							}
 						}
-						q = kw.length > 0 ? kw + "|. " + c.cq : c.cq;
+						q = mtdes.length > 0 ? mtdes + ". " + c.cq : c.cq;
+						if (kw.length > 0) {
+							q = kw + "|. " + q;
+						}
 						f.apply(f.detect(), q)
 					} else {
 						f.apply(f.detect())
