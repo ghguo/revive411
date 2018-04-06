@@ -97,7 +97,7 @@ function revivefn(d, c, cq) {
 						cq = cq + mtdes + ". ";
 					
 					if (c.cq != "")
-						cq = cq + c.cq
+						cq = cq + c.cq;
 					
 					f.apply(f.detect(), cq)
 				},
