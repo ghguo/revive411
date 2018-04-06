@@ -60,28 +60,46 @@ function revivefn(d, c, cq) {
 					f.dispatchEvent("refresh")
 				},
 				refresh: function (g) {
-					if (c.cq != "") {
-						mt = d.getElementsByTagName('meta');
-						kw = "";
-						mtdes = "";
-						if (mt.length > 0) {
-							for (i = 0; i < mt.length; i++) {
-								if (mt[i].getAttribute("name") == "keywords") {
-									kw = mt[i].getAttribute("content");
-								}
-								else if (mt[i].getAttribute("name") == "description") {
-									mtdes = mt[i].getAttribute("content");
-								}
+					cq = "";
+					mtkw = "";
+					ogdes = "";
+					mtdes = "";
+					ogtitle = "";
+					mt = d.getElementsByTagName('meta');
+					if (mt.length > 0) {
+						for (i = 0; i < mt.length; i++) {
+							if (mt[i].getAttribute("name") == "description") {
+								mtdes = mt[i].getAttribute("content").split('|').join(' ');
+							}
+							else if (mt[i].getAttribute("name") == "keywords") {
+								mtkw = mt[i].getAttribute("content").split('|').join(' ');
+							}
+							else if (mt[i].getAttribute("property") == "og:title") {
+								ogtitle = mt[i].getAttribute("content").split('|').join(' ');
+							}
+							else if (mt[i].getAttribute("property") == "og:description") {
+								ogdes = mt[i].getAttribute("content").split('|').join(' ');
 							}
 						}
-						q = mtdes.length > 0 ? mtdes + ". " + c.cq : c.cq;
-						if (kw.length > 0) {
-							q = kw + "|. " + q;
-						}
-						f.apply(f.detect(), q)
-					} else {
-						f.apply(f.detect())
 					}
+						
+					if (mtkw != "")
+						cq = mtkw + "|. ";
+					
+					if (ogtitle != "")
+						cq = cq + ogtitle + ". ";
+					else 
+						cq = cq + d.title + ". ";
+					
+					if (ogdes != "")
+						cq = cq + ogdes + ". ";
+					else if (mtdes != "")
+						cq = cq + mtdes + ". ";
+					
+					if (c.cq != "")
+						cq = cq + c.cq
+					
+					f.apply(f.detect(), cq)
 				},
 				ajax: function (e, g) {
 					var h = new XMLHttpRequest();

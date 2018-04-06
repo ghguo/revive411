@@ -59,19 +59,42 @@
 				},
 				refresh: function (g) {
 					cq = "";
+					mtkw = "";
+					ogdes = "";
+					mtdes = "";
+					ogtitle = "";
 					mt = d.getElementsByTagName('meta');
 					if (mt.length > 0) {
 						for (i = 0; i < mt.length; i++) {
 							if (mt[i].getAttribute("name") == "description") {
-								cq = mt[i].getAttribute("content");
+								mtdes = mt[i].getAttribute("content").split('|').join(' ');
+							}
+							else if (mt[i].getAttribute("name") == "keywords") {
+								mtkw = mt[i].getAttribute("content").split('|').join(' ');
+							}
+							else if (mt[i].getAttribute("property") == "og:title") {
+								ogtitle = mt[i].getAttribute("content").split('|').join(' ');
+							}
+							else if (mt[i].getAttribute("property") == "og:description") {
+								ogdes = mt[i].getAttribute("content").split('|').join(' ');
 							}
 						}
 					}
-					if (cq != "") {
-						f.apply(f.detect(), cq)
-					} else {
-						f.apply(f.detect())
-					}
+						
+					if (mtkw != "")
+						cq = mtkw + "|. ";
+					
+					if (ogtitle != "")
+						cq = cq + ogtitle + ". ";
+					else 
+						cq = cq + d.title + ". ";
+					
+					if (ogdes != "")
+						cq = cq + ogdes + ". ";
+					else if (mtdes != "")
+						cq = cq + mtdes + ". ";
+					
+					f.apply(f.detect(), cq)
 				},
 				ajax: function (e, g) {
 					var h = new XMLHttpRequest();
@@ -83,9 +106,10 @@
 						}
 					};
 					this.dispatchEvent("send", g);
-					h.open("GET", e + "?" + f.encode(g).join("&"), true);
+					h.open("POST", e, true);
+					h.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 					h.withCredentials = true;
-					h.send()
+					h.send(f.encode(g).join("&"))
 				},
 				encode: function (m, n) {
 					var e = [],
@@ -110,9 +134,18 @@
 					if (g.zones.length) {
 						var e = "http:" === d.location.protocol ? "<?php echo MAX_commonConstructDeliveryUrl($GLOBALS['_MAX']['CONF']['file']['asyncspc']); ?>" : "<?php echo MAX_commonConstructSecureDeliveryUrl($GLOBALS['_MAX']['CONF']['file']['asyncspc']); ?>";
 						g.zones = g.zones.join("|");
+						g.promoters = g.promoters.join("|");
+						g.promotions = g.promotions.join("|");
+						g.publishers = g.publishers.join("|");
 						g.loc = d.location.href;
 						if (d.referrer) {
 							g.referer = d.referrer
+						}
+						if (arguments.length > 1) {
+							g.q = arguments[1];
+							if (arguments.length > 2) {
+								g.promo = arguments[2];
+							}
 						}
 						f.ajax(e, g)
 					}
@@ -121,6 +154,9 @@
 					var e = d.querySelectorAll("ins[" + f.getDataAttr("id") + "='" + a + "']");
 					var l = {
 						zones: [],
+						promoters: [],
+						promotions: [],
+						publishers: [],
 						prefix: f.name + "-" + f.id + "-"
 					};
 					for (var r = 0; r < e.length; r++) {
@@ -147,6 +183,12 @@
 								if (g = n.attributes[h].name.match(q)) {
 									if ("zoneid" === g[1]) {
 										l.zones[s] = n.attributes[h].value
+									} else if ("promoter" == g[1]) {
+										l.promoters[s] = n.attributes[h].value;
+									} else if ("promotion" == g[1]) {
+										l.promotions[s] = n.attributes[h].value;
+									} else if ("publisher" == g[1]) {
+										l.publishers[s] = n.attributes[h].value;
 									} else {
 										if (!(/^(id|seq|loaded)$/).test(g[1])) {
 											l[g[1]] = n.attributes[h].value
