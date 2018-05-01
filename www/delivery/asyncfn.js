@@ -89,8 +89,9 @@ function revivefn(d, c, cqdv) {
 					
 					if (ogtitle != "")
 						cq = cq + ogtitle + ". ";
-					else 
+					else {
 						cq = cq + d.title.split('|').join(' ') + ". ";
+					}
 					
 					if (ogdes != "")
 						cq = cq + ogdes + ". ";
@@ -183,7 +184,7 @@ function revivefn(d, c, cqdv) {
 							continue;
 						s = seq++;
 						n.setAttribute(k, s);
-						n.id = l.prefix + s
+						n.id = l.prefix + s;
 						if (n.hasAttribute(p)) {
 							var q = new RegExp("^" + f.getDataAttr("(.*)") + "$"),
 							g;
