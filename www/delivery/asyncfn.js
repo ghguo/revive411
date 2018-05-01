@@ -2,8 +2,7 @@ var f;
 function revivefn(d, c, cqdv) {
 	var a = "<?php echo $etag; ?>";
 	c.reviveAsync = c.reviveAsync || {};
-	c.cqd = cqdv.innerText;
-	c.cqdv = cqdv;
+	typeof cqdv == "string" ? c.cqd = cqdv : c.cqdv = cqdv;
 	(function (e) {
 		if (typeof e.CustomEvent === "function") {
 			return false
@@ -98,8 +97,7 @@ function revivefn(d, c, cqdv) {
 					else if (mtdes != "")
 						cq = cq + mtdes + ". ";
 					
-					if (c.cqd != "")
-						cq = cq + c.cqd;
+					(c.cqd != null && c.cqd != "") ? (cq = cq + c.cqd) : (cq = cq + c.cqdv.innerText);
 					
 					f.apply(f.detect(), cq)
 				},
@@ -173,15 +171,17 @@ function revivefn(d, c, cqdv) {
 						n = e[r],
 						s;
 						el = e[r];
-						isChild = false;
-						while (el = el.parentNode) {
-							if (el.id == window.cqdv.id) {
-								isChild = true;
-								break;
+						if (window.cqdv != null){
+							isChild = false;
+							while (el = el.parentNode) {
+								if (el.id == window.cqdv.id) {
+									isChild = true;
+									break;
+								}
 							}
+							if (!isChild)
+								continue;
 						}
-						if (!isChild)
-							continue;
 						s = seq++;
 						n.setAttribute(k, s);
 						n.id = l.prefix + s;
