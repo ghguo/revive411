@@ -87,7 +87,7 @@
 					if (ogtitle != "")
 						cq = cq + ogtitle + ". ";
 					else 
-						cq = cq + d.title + ". ";
+						cq = cq + d.title.split('|').join(' ') + ". ";
 					
 					if (ogdes != "")
 						cq = cq + ogdes + ". ";

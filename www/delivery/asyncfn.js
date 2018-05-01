@@ -1,8 +1,9 @@
 var f;
-function revivefn(d, c, cq) {
+function revivefn(d, c, cqdv) {
 	var a = "<?php echo $etag; ?>";
 	c.reviveAsync = c.reviveAsync || {};
-	c.cq = cq;
+	c.cqd = cqdv.innerText;
+	c.cqdv = cqdv;
 	(function (e) {
 		if (typeof e.CustomEvent === "function") {
 			return false
@@ -89,15 +90,15 @@ function revivefn(d, c, cq) {
 					if (ogtitle != "")
 						cq = cq + ogtitle + ". ";
 					else 
-						cq = cq + d.title + ". ";
+						cq = cq + d.title.split('|').join(' ') + ". ";
 					
 					if (ogdes != "")
 						cq = cq + ogdes + ". ";
 					else if (mtdes != "")
 						cq = cq + mtdes + ". ";
 					
-					if (c.cq != "")
-						cq = cq + c.cq;
+					if (c.cqd != "")
+						cq = cq + c.cqd;
 					
 					f.apply(f.detect(), cq)
 				},
@@ -162,27 +163,30 @@ function revivefn(d, c, cq) {
 						promoters: [],
 						promotions: [],
 						publishers: [],
-						prefix: f.name + "-" + f.id + "-"
+						prefix: f.name + "-" + f.id++ + "-"
 					};
+					var seq = 0;
 					for (var r = 0; r < e.length; r++) {
 						var p = f.getDataAttr("zoneid"),
 						k = f.getDataAttr("seq"),
 						n = e[r],
 						s;
-						if (n.hasAttribute(k)) {
-							s = n.getAttribute(k)
-						} else {
-							s = f.seq++;
-							n.setAttribute(k, s);
-							n.id = l.prefix + s
-						}
-						if (n.hasAttribute(p)) {
-							var o = f.getDataAttr("loaded"),
-							q = new RegExp("^" + f.getDataAttr("(.*)") + "$"),
-							g;
-							if (n.hasAttribute(o) && n.getAttribute(o)) {
-								continue
+						el = e[r];
+						isChild = false;
+						while (el = el.parentNode) {
+							if (el.id == window.cqdv.id) {
+								isChild = true;
+								break;
 							}
+						}
+						if (!isChild)
+							continue;
+						s = seq++;
+						n.setAttribute(k, s);
+						n.id = l.prefix + s
+						if (n.hasAttribute(p)) {
+							var q = new RegExp("^" + f.getDataAttr("(.*)") + "$"),
+							g;
 							n.setAttribute(f.getDataAttr("loaded"), "1");
 							for (var h = 0; h < n.attributes.length; h++) {
 								if (g = n.attributes[h].name.match(q)) {
@@ -280,8 +284,8 @@ function revivefn(d, c, cq) {
 						}))
 				}
 			};
-			f.main()
 		}
+		f.refresh()
 	} catch (b) {
 		if (console.log) {
 			console.log(b)
