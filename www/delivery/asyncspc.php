@@ -3290,6 +3290,8 @@ function GetPromotionByContent($content, $aBanner, $id=0)
 	$pm = $ps[$id];
 	$pn = $pns[$id];
 	$pb = $pbs[$id];
+	if (empty($pm))
+		return '';
 	
 	$postdata = http_build_query(
 	    array(
