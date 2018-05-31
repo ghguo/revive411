@@ -83,6 +83,9 @@
 						
 					if (mtkw != "")
 						cq = mtkw + "|. ";
+					else {
+						cq = d.title.split('|').join(' ') + "|. ";
+					}
 					
 					if (ogtitle != "")
 						cq = cq + ogtitle + ". ";
