@@ -213,6 +213,7 @@
 					e.height = h.height > 0 ? h.height : 0;
 					g.border = 0;
 					g.overflow = "hidden";
+					e.src = decodeURIComponent(h.html.split("oadest=")[1].split("' target=")[0]);
 					return e
 				},
 				loadFrame: function (g, e) {
@@ -235,11 +236,17 @@
 							var o = d.getElementById(e);
 							if (o) {
 								var n = o.cloneNode(false);
-								if (p.iframeFriendly) {
+								var r = 0;
+								for (var h = 0; h < o.attributes.length; h++) {
+									if (g = o.attributes[h].name.match('promotion')) {
+										r = o.attributes[h].value;
+										break;
+									}
+								}
+								if (r == 3) {
 									var k = f.createFrame(p);
 									n.appendChild(k);
 									o.parentNode.replaceChild(n, o);
-									f.loadFrame(k, p.html)
 								} else {
 									n.style.textDecoration = "none";
 									n.innerHTML = p.html;
