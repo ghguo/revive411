@@ -84,7 +84,10 @@
 					if (mtkw != "")
 						cq = mtkw + "|. ";
 					else {
-						cq = d.title.split('|').join(' ') + "|. ";
+						hr = d.getElementsByTagName('h1');
+						if (hr.length > 0) {
+							cq = hr[0].innerText.split('|').join(' ') + ". ";
+						}
 					}
 					
 					if (ogtitle != "")
