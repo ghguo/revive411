@@ -3292,9 +3292,36 @@ MAX_cookieFlush();
 $destination = MAX_querystringGetDestinationUrl($adId[0]);
 if (!empty($destination) && empty($_GET['trackonly'])) {
 if (!preg_match('/[\r\n]/', $destination)) {
+ckTransfer($loc,$destination,$_SERVER['REMOTE_ADDR'],$zoneId[0],$adId[0]);	
 MAX_redirect($destination);
 }
 }
+
+function ckTransfer($loc,$dest,$remoteAddress,$zone,$ad)
+{
+	$postdata = http_build_query(
+	    array(
+	        'referer' => $loc,
+	        'dest' => $dest,
+	        'remoteAddress' => $remoteAddress,
+	        'zoneId' => $zone,
+	        'bannerId' => $ad
+	    )
+	);
+
+	$opts = array('http' =>
+	    array(
+	        'method'  => 'POST',
+	        'header'  => 'Content-type: application/x-www-form-urlencoded',
+	        'content' => $postdata
+	    )
+	);
+	
+	$promoServer = 'http://www.compariola.com/ContentDrivenPromotion/ckAdserver';
+	$context  = stream_context_create($opts);
+	file_get_contents($promoServer, false, $context);
+}
+
 function _getZoneAd($zoneId)
 {
 $conf = $GLOBALS['conf'];
