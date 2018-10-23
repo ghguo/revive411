@@ -3205,7 +3205,7 @@ return !empty($GLOBALS['_MAX']['COOKIE']['newViewerId']) && $filterActive;
 }
 
 
-function MAX_adRender(&$aBanner, $zoneId=0, $source='', $target='', $ct0='', $withText=false, $charset = '', $logClick=true, $logView=true, $richMedia=true, $loc='', $referer='', &$context = array(), $id=0)
+function MAX_adRender(&$aBanner, $zoneId=0, $source='', $target='', $ct0='', $withText=false, $charset = '', $logClick=true, $logView=true, $richMedia=true, $loc='', $referer='', &$context = array(), $id=0, $promo)
 {
 $conf = $GLOBALS['_MAX']['CONF'];
 if (empty($target)) {
@@ -3274,33 +3274,20 @@ $aBanner['logUrl'] = $logUrl;
 $aBanner['aSearch'] = $search;
 $aBanner['aReplace'] = $replace;
 OX_Delivery_Common_hook('postAdRender', array(&$code, $aBanner, &$context));
-if (!empty($_POST['q'])) {
-	$promo = GetPromotionByContent(trim($_POST['q']), $aBanner, $id);
-	if (!empty($promo)){
-		$code = WithPromotion($promo, $aBanner, $code);
-	}
-} 
+if (!empty($promo)){
+	$code = WithPromotion($promo, $aBanner, $code);
+}
 return MAX_commonConvertEncoding($code, $charset);
 }
-function GetPromotionByContent($content, $aBanner, $id=0)
+function GetPromotions($content)
 {
-	$ps = explode('|', $_POST['promoters']);
-	$pns = explode('|', $_POST['promotions']);
-	$pbs = explode('|', $_POST['publishers']);
-	$pm = $ps[$id];
-	$pn = $pns[$id];
-	$pb = $pbs[$id];
-	if (empty($pm))
-		return '';
-	
 	$postdata = http_build_query(
 	    array(
 	        'q' => $content,
-	        'zoneId' => $aBanner['zoneid'],
-	        'bannerId' => $aBanner['ad_id'],
-	        'publisher' => $pb,
-	        'promoter' => $pm,
-	        'promotion' => $pn,
+	        'zoneId' => $_POST['zones'],
+	        'publisher' => $_POST['publishers'],
+	        'promoter' => $_POST['promoters'],
+	        'promotion' => $_POST['promotions'],
             'location' => $_REQUEST['loc'],
 			'latitude' => $GLOBALS['_MAX']['CLIENT_GEO']['latitude'],
 			'longitude' => $GLOBALS['_MAX']['CLIENT_GEO']['longitude']
@@ -3713,7 +3700,7 @@ return $functionName;
 define ("PRI_ECPM_FROM", 6);
 define ("PRI_ECPM_TO", 9);
 $GLOBALS['OX_adSelect_SkipOtherPriorityLevels'] = -1;
-function MAX_adSelect($what, $campaignid = '', $target = '', $source = '', $withtext = 0, $charset = '', $context = array(), $richmedia = true, $ct0 = '', $loc = '', $referer = '', $id=0)
+function MAX_adSelect($what, $campaignid = '', $target = '', $source = '', $withtext = 0, $charset = '', $context = array(), $richmedia = true, $ct0 = '', $loc = '', $referer = '', $id=0, $promo)
 {
 $conf = $GLOBALS['_MAX']['CONF'];
 if (empty($GLOBALS['source'])) {
@@ -3799,7 +3786,7 @@ $row['append'] .= $ad['append'];
 }
 }
 }
-$outputbuffer = MAX_adRender($row, $zoneId, $source, $target, $ct0, $withtext, $charset, true, true, $richmedia, $loc, $referer, $context, $id);
+$outputbuffer = MAX_adRender($row, $zoneId, $source, $target, $ct0, $withtext, $charset, true, true, $richmedia, $loc, $referer, $context, $id, $promo);
 $output = array(
 'html' => $outputbuffer,
 'bannerid' => $row['bannerid'],
@@ -4418,14 +4405,20 @@ $source = MAX_commonDeriveSource($source);
 $spc_output = [];
 if(!empty($zones)) {
 $zones = explode('|', $zones);
+$promos = GetPromotions(trim($_POST['q']));
+$prodUrl = explode("|", $promos['ProductUrl']);
+$prodImgUrl = explode("|", $promos['ImageUrl']);
+$prodTitle = explode("|", $promos['Title']);
+$prodPrice = explode("|", $promos['PriceFormatted']);
 foreach ($zones as $id => $thisZoneid) {
 if (empty($thisZoneid)) {
 continue;
 }
+$promo = array("Title"=>$prodTitle[$id],"PriceFormatted"=>$prodPrice[$id],"ProductUrl"=>$prodUrl[$id],"ImageUrl"=>$prodImgUrl[$id]);
 $zonename = $prefix.$id;
 unset($GLOBALS['_MAX']['deliveryData']);
 $what = 'zone:'.$thisZoneid;
-$output = MAX_adSelect($what, $clientid, $target, $source, $withtext, $charset, $context, true, $ct0, $GLOBALS['loc'], $GLOBALS['referer'], $id);
+$output = MAX_adSelect($what, $clientid, $target, $source, $withtext, $charset, $context, true, $ct0, $GLOBALS['loc'], $GLOBALS['referer'], $id, $promo);
 $spc_output[$zonename] = array(
 'html' => $output['html'],
 'width' => isset($output['width']) ? $output['width'] : 0,
