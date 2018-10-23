@@ -4406,10 +4406,10 @@ $spc_output = [];
 if(!empty($zones)) {
 $zones = explode('|', $zones);
 $promos = GetPromotions(trim($_POST['q']));
-$prodUrl = explode("|", $promos['ProductUrl']);
-$prodImgUrl = explode("|", $promos['ImageUrl']);
-$prodTitle = explode("|", $promos['Title']);
-$prodPrice = explode("|", $promos['PriceFormatted']);
+$prodUrl = explode("\t", $promos['ProductUrl']);
+$prodImgUrl = explode("\t", $promos['ImageUrl']);
+$prodTitle = explode("\t", $promos['Title']);
+$prodPrice = explode("\t", $promos['PriceFormatted']);
 foreach ($zones as $id => $thisZoneid) {
 if (empty($thisZoneid)) {
 continue;
