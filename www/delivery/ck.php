@@ -3293,7 +3293,7 @@ $destination = MAX_querystringGetDestinationUrl($adId[0]);
 if (!empty($destination) && empty($_GET['trackonly'])) {
 if (!preg_match('/[\r\n]/', $destination)) {
 ckTransfer($loc,$destination,$_SERVER['REMOTE_ADDR'],$zoneId[0],$adId[0]);	
-MAX_redirect($destination);
+MAX_redirect(explode("&addon=",$destination)[0]);
 }
 }
 
