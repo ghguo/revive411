@@ -217,36 +217,35 @@ function adrshow(d, c) {
 								}
 								if (r == 3) {
 									window.adr_o3 = o;
-									var k = decodeURIComponent(p.html.split("oadest=")[1].split("' target=")[0]).split("?")[1].split("&");
-									var t = [];
-									for (var h = 0; h < k.length; h++) {
-										var s = k[h].split("=");
-										t.push(encodeURIComponent(s[0]) + "=" + encodeURIComponent(s[1]));
+									let kk = decodeURIComponent(p.html.split("oadest=")[1].split("' target=")[0]).split("?")[1].split("&");
+									let tt = [];
+									for (let hh = 0; hh < kk.length; hh++) {
+										let s = kk[hh].split("=");
+										tt.push(encodeURIComponent(s[0]) + "=" + encodeURIComponent(s[1]))
 									}
-									var h = new XMLHttpRequest();
-									h.onreadystatechange = function () {
+									let hr = new XMLHttpRequest();
+									hr.onreadystatechange = function () {
 										if (4 === this.readyState) {
 											if (200 === this.status) {
 												window.adr_ps = JSON.parse(this.responseText).Products;
 												window.adr_idx = 0;
 												showprod = function () {
 													if (window.adr_idx < window.adr_ps.length) {
-														ps = window.adr_ps[window.adr_idx];
+														let ps = window.adr_ps[window.adr_idx];
 														window.adr_idx += 1;
-														window.adr_o3.innerHTML ='<a href="' + ps[2] + '" rel="nofollow" target="_blank"><div style="display:inline-block;width:250px;height:250px;text-align:center"><img src="' + ps[3] + '" style="max-width:198px;max-height:198px;width:auto;height:auto" /><div><div style="padding-top:1px">' + ps[0] + '</div><div style="padding-top:1px">' + ps[1] + '</div></div></div></a>';
-													}
-													else {
-														window.adr_idx = 0;
+														window.adr_o3.innerHTML = '<a href="' + ps[2] + '" rel="nofollow" target="_blank"><div style="display:inline-block;width:250px;height:250px;text-align:center"><img src="' + ps[3] + '" style="max-width:198px;max-height:198px;width:auto;height:auto" /><div><div style="padding-top:1px">' + ps[0] + '</div><div style="padding-top:1px">' + ps[1] + '</div></div></div></a>'
+													} else {
+														window.adr_idx = 0
 													}
 												}
 												showprod();
-												window.setInterval(showprod, 10000);
+												window.setInterval(showprod, 10000)
 											}
 										}
 									};
-									h.open("POST", "https://www.compariola.com/ContentDrivenPromotion/GetPromotions", true);
-									h.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-									h.send(t.join("&"))
+									hr.open("POST", "https://www.compariola.com/ContentDrivenPromotion/GetPromotions", true);
+									hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+									hr.send(tt.join("&"))
 								} else {
 									n.style.textDecoration = "none";
 									n.innerHTML = p.html;
