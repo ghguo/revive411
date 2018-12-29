@@ -237,7 +237,7 @@ function adrshow(d, c) {
 													} else {
 														window.adr_idx = 0
 													}
-												}
+												};
 												showprod();
 												window.setInterval(showprod, 10000)
 											}
