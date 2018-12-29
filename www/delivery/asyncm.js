@@ -200,30 +200,6 @@ function adrshow(d, c) {
 					}
 					return l
 				},
-				createFrame: function (h) {
-					var e = d.createElement("IFRAME"),
-					g = e.style;
-					e.scrolling = "no";
-					e.frameBorder = 0;
-					e.width = h.width > 0 ? h.width : 0;
-					e.height = h.height > 0 ? h.height : 0;
-					g.border = 0;
-					g.overflow = "hidden";
-					e.src = decodeURIComponent(h.html.split("oadest=")[1].split("' target=")[0]);
-					return e
-				},
-				loadFrame: function (g, e) {
-					var h = g.contentDocument || g.contentWindow.document;
-					h.open();
-					h.writeln("<!DOCTYPE html>");
-					h.writeln("<html>");
-					h.writeln('<head><base target="_top"><meta charset="UTF-8"></head>');
-					h.writeln('<body border="0" margin="0" style="margin: 0; padding: 0">');
-					h.writeln(e);
-					h.writeln("</body>");
-					h.writeln("</html>");
-					h.close()
-				},
 				spc: function (l) {
 					this.dispatchEvent("receive", l);
 					for (var e in l) {
@@ -240,9 +216,37 @@ function adrshow(d, c) {
 									}
 								}
 								if (r == 3) {
-									var k = f.createFrame(p);
-									n.appendChild(k);
-									o.parentNode.replaceChild(n, o);
+									window.adr_o3 = o;
+									var k = decodeURIComponent(p.html.split("oadest=")[1].split("' target=")[0]).split("?")[1].split("&");
+									var t = [];
+									for (var h = 0; h < k.length; h++) {
+										var s = k[h].split("=");
+										t.push(encodeURIComponent(s[0]) + "=" + encodeURIComponent(s[1]))
+									}
+									var h = new XMLHttpRequest();
+									h.onreadystatechange = function () {
+										if (4 === this.readyState) {
+											if (200 === this.status) {
+												window.adr_ps = JSON.parse(this.responseText).Products;
+												window.adr_idx = 0;
+												showprod = function () {
+													if (window.adr_idx < window.adr_ps.length) {
+														ps = window.adr_ps[window.adr_idx];
+														window.adr_idx += 1;
+														window.adr_o3.innerHTML ='<a href=' + ps[2] + ' rel="nofollow" target="_blank"><div style="display:inline-block;width:250px;height:250px;text-align:center"><img src=' + ps[3] + ' style="max-width:198px;max-height:198px;width:auto;height:auto" /><div><div style="padding-top:1px">' + ps[0] + '</div><div style="padding-top:1px">' + ps[1] + '</div></div></div></a>';
+													}
+													else {
+														window.adr_idx = 0;
+													}
+												}
+												showprod();
+												window.setInterval(showprod, 10000);
+											}
+										}
+									};
+									h.open("POST", "https://www.compariola.com/ContentDrivenPromotion/GetPromotions", true);
+									h.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+									h.send(t.join("&"))
 								} else {
 									n.style.textDecoration = "none";
 									n.innerHTML = p.html;
