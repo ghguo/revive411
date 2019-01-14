@@ -233,7 +233,7 @@ function adrshow(d, c) {
 													if (window.adr_idx < window.adr_ps.length) {
 														let ps = window.adr_ps[window.adr_idx];
 														window.adr_idx += 1;
-														window.adr_o3.innerHTML = '<a href="' + ps[2] + '" rel="nofollow" target="_blank"><div style="display:inline-block;width:250px;height:250px;text-align:center"><img src="' + ps[3] + '" style="max-width:198px;max-height:198px;width:auto;height:auto;margin-left:auto;margin-right:auto;" /><div><div style="padding-top:1px">' + ps[0] + '</div><div style="padding-top:1px">' + ps[1] + '</div></div></div></a>'
+														window.adr_o3.innerHTML = '<a href="' + ps[2] + '" rel="nofollow" target="_blank"><div style="display:inline-block;width:250px;height:250px;text-align:center"><img src="' + ps[3] + '" style="max-width:198px;max-height:198px;width:auto;height:auto;margin-left:auto;margin-right:auto;" /><div><div style="padding-top:1px">' + ps[0] + '</div><div style="padding-top:1px">' + (ps[1]==null?' ':ps[1]) + '</div></div></div></a>'
 													} else {
 														window.adr_idx = 0
 													}
