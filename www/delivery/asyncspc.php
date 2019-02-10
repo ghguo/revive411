@@ -3326,8 +3326,8 @@ if (strlen($newTitle) > 40){
 	$newTitle = substr($shortTitle, 0, strrpos($shortTitle, ' '));
 }
 $newPrice = $promo['PriceFormatted'];
-$newDiv = '<div style="width:' . $aBanner[width] . 'px;height:' . $aBanner[height] . 'px;text-align:center;"><img src="' 
-. $newImg . '" style="max-width:198px;max-height:180px;width:auto;height:auto;"><div style="width:100%;display:block;height:50px;"><div style="padding-top:1px;">' 
+$newDiv = '<div style="text-align:center;"><img src="' 
+. $newImg . '" style="width:auto;height:auto;"><div style="width:100%;display:block;height:50px;"><div style="padding-top:1px;">' 
 . $newTitle . '</div><div style="padding-top:1px;">' 
 . $newPrice . '</div></div></div>';
 $code = str_replace($origImg, $newDiv, $newString);
