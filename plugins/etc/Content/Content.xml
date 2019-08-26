@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href=""?>
+
+<plugin>
+    <name>Content</name>
+    <displayName>Content Delivery Limitation Plugin</displayName>
+    <creationDate>2016-03-30</creationDate>
+    <author>Adrelevantis</author>
+    <authorEmail>gary.guo@adrelevantis.com</authorEmail>
+    <authorUrl>http://www.adrelevantis.com</authorUrl>
+    <license>GNU Gneral Public License v2</license>
+    <description>Plugin that provides the ability to limit delivery of ads by content.</description>
+    <version>1.0.0</version>
+    <oxversion>3.2.0-beta-rc3</oxversion>
+    <extends>deliveryLimitations</extends>
+
+    <install>
+        <files>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">Category.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">Category.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">iab-category.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">category.js</file>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">Productcategory.js</file>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">Productcategory.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">Productcategory.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">product-category.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">Keyword.class.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">Keyword.delivery.php</file>
+            <file path="{MODULEPATH}deliveryLimitations/Content/">getcategories.php</file>
+        </files>
+
+        <components>
+            <component><name>Category</name></component>
+            <component><name>Productcategory</name></component>
+            <component><name>Keyword</name></component>
+        </components>
+    </install>
+
+</plugin>
