@@ -4405,16 +4405,21 @@ $source = MAX_commonDeriveSource($source);
 $spc_output = [];
 if(!empty($zones)) {
 $zones = explode('|', $zones);
-$promos = GetPromotions(trim($_POST['q']));
-$prodUrl = explode("\t", $promos['ProductUrl']);
-$prodImgUrl = explode("\t", $promos['ImageUrl']);
-$prodTitle = explode("\t", $promos['Title']);
-$prodPrice = explode("\t", $promos['PriceFormatted']);
+if (!empty($_POST["promotions"])) {
+	$promotions = explode('|', $_POST['promotions']);
+	$promos = GetPromotions(trim($_POST['q']));
+	$prodUrl = explode("\t", $promos['ProductUrl']);
+	$prodImgUrl = explode("\t", $promos['ImageUrl']);
+	$prodTitle = explode("\t", $promos['Title']);
+	$prodPrice = explode("\t", $promos['PriceFormatted']);
+}
 foreach ($zones as $id => $thisZoneid) {
 if (empty($thisZoneid)) {
 continue;
 }
-$promo = array("Title"=>$prodTitle[$id],"PriceFormatted"=>$prodPrice[$id],"ProductUrl"=>$prodUrl[$id],"ImageUrl"=>$prodImgUrl[$id]);
+if (!empty($promotions[$id])) {
+	$promo = array("Title"=>$prodTitle[$id],"PriceFormatted"=>$prodPrice[$id],"ProductUrl"=>$prodUrl[$id],"ImageUrl"=>$prodImgUrl[$id]);
+}
 $zonename = $prefix.$id;
 unset($GLOBALS['_MAX']['deliveryData']);
 $what = 'zone:'.$thisZoneid;

@@ -42,6 +42,7 @@ function ContentCategoriesKeywords($qContent)
 	        'appId' => $catsServerKey,
 	        'zoneId' => '',
 	        'deliveryId' => $deliveryId,
+            'location' => $_REQUEST['loc'],
 	        'q' => $qContent
 	    )
 	);
