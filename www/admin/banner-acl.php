@@ -156,15 +156,6 @@ echo "
 <input type='submit' name='submit' value='{$GLOBALS['strSaveChanges']}' tabindex='".($tabindex++)."'>
 
 </form>";
-
-foreach ($acl as $ac) {
-	if ($ac['type'] == 'deliveryLimitations:Content:Category' || $ac['type'] == 'deliveryLimitations:Content:Productcategory') {
-		if ($ac['type'] == 'deliveryLimitations:Content:Category')
-			echo "<script type='text/javascript' src='/plugins/deliveryLimitations/Content/category.js'></script>";
-		else
-			echo "<script type='text/javascript' src='/plugins/deliveryLimitations/Content/Productcategory.js'></script>";
-	}
-}
 /*-------------------------------------------------------*/
 /* Form requirements                                     */
 /*-------------------------------------------------------*/

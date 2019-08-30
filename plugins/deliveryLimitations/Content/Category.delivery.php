@@ -32,81 +32,40 @@ function MAX_checkContent_Category($limitation, $op, $aParams = array())
 		$qContent = trim($_POST['q']);
 		if (empty($qContent))
 		{
-			if ($op == '==' || $op == '=~') {
-				return false;
-			} 
-			return true;
+			return false;
 		}
 		
 		$result = MAX_cacheGetContentCategoriesKeywords($qContent); 
 		if (!empty($result))
 			$result = json_decode($result, true);
 		
-		$keys = '';
-		$key1 = '';
-		$key2 = '';
-		$key3 = '';
 		if (!empty($result) && !empty($result['Cats']) && count($result['Cats']) > 0)
 		{
-			$cats = explode("/", $result['Cats'][0]['Content']);
-			$cat1 = $cats[1];
-			$cat2 = '';
-			$cat3 = '';
-			if (count($cats) == 3) {
-				$cat2 = $cats[2];
-			}
-			else if (count($cats) == 4)	{
-				$cat2 = $cats[2];
-				$cat3 = $cats[3];
-			}
-			
-			if (!isset($GLOBALS['IAB_CATEGORIES']['LEVEL1']))
+			if (!isset($GLOBALS['IAB_CATEGORIES']['LEVEL3']))
 			{
 				include(MAX_PATH . '/plugins/deliveryLimitations/Content/iab-category.php');
 			}
-			if (isset($GLOBALS['IAB_CATEGORIES']['LEVEL1']))
-			{
-				$key1 = array_search($cat1, $GLOBALS['IAB_CATEGORIES']['LEVEL1']);
-				if ($op == '=~') {
-					if (empty($key1)) {
-						return false;
-					}
-					return stripos(','.$limitation.',', ','.$key1.',') !== false;
-				}
-				if ($op == '!~') {
-					if (empty($key1)) {
-						return true;
-					}
-					return stripos(','.$limitation.',', ','.$key1.',') === false;
-				}
-				
-				if (!empty($cat2))
-				{
-					$key2 = array_search($cat2, $GLOBALS['IAB_CATEGORIES']['LEVEL2']);
-					
-					if (!empty($cat3))
-					{
-						$key3 = array_search($cat3, $GLOBALS['IAB_CATEGORIES']['LEVEL3']);
+			if ($op == '=~') {
+				$limits = explode(",", $limitation);
+				$ckey='';
+				foreach ($result['Cats'] as $cat) {
+					$ckey = array_search(substr($cat['Content'], 1), $GLOBALS['IAB_CATEGORIES']['LEVEL3']);
+					foreach ($limits as $lmt) {
+						if ($lmt == substr($ckey, 0, strlen($lmt))) {
+							return true;
+						}
 					}
 				}
-				
-				$keys = $key1 . (!empty($key2) ? ",$key2" . (!empty($key3) ? ",$key3" : "") : "");
+			}
+			else if ($op == '!~') {
+				foreach ($result['Cats'] as $i => $cat) {
+					$ckey = array_search(substr($cat['Content'], 1), $GLOBALS['IAB_CATEGORIES']['LEVEL3']);
+					return strpos(','.$limitation.',', ','.$ckey.',') === false;
+				}
 			}
 		}
-		
-		if ($op == '==') {
-			return strcasecmp($limitation, $keys) == 0;
-		} 
-
-		if ($op == '!=') {
-			return strcasecmp($limitation, $keys) != 0;
-		} 
 	}
 
-	if ($op == '==' || $op == '=~') {
-		return false;
-	} 
-
-	return true;
+	return false;
 }
 ?>
