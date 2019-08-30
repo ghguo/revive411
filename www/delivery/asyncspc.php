@@ -4424,6 +4424,7 @@ $zonename = $prefix.$id;
 unset($GLOBALS['_MAX']['deliveryData']);
 $what = 'zone:'.$thisZoneid;
 $output = MAX_adSelect($what, $clientid, $target, $source, $withtext, $charset, $context, true, $ct0, $GLOBALS['loc'], $GLOBALS['referer'], $id, $promo);
+$promo = [];
 $spc_output[$zonename] = array(
 'html' => $output['html'],
 'width' => isset($output['width']) ? $output['width'] : 0,
