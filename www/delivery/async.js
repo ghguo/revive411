@@ -68,19 +68,15 @@
 						for (i = 0; i < mt.length; i++) {
 							if (mt[i].getAttribute("name") == "description") {
 								mtdes = mt[i].getAttribute("content").split('|').join(' ');
-							}
-							else if (mt[i].getAttribute("name") == "keywords") {
+							} else if (mt[i].getAttribute("name") == "keywords") {
 								mtkw = mt[i].getAttribute("content").split('|').join(' ');
-							}
-							else if (mt[i].getAttribute("property") == "og:title") {
+							} else if (mt[i].getAttribute("property") == "og:title") {
 								ogtitle = mt[i].getAttribute("content").split('|').join(' ');
-							}
-							else if (mt[i].getAttribute("property") == "og:description") {
+							} else if (mt[i].getAttribute("property") == "og:description") {
 								ogdes = mt[i].getAttribute("content").split('|').join(' ');
 							}
 						}
 					}
-						
 					if (mtkw != "")
 						cq = mtkw + "|. ";
 					else {
@@ -89,18 +85,15 @@
 							cq = hr[0].innerText.split('|').join(' ') + ". ";
 						}
 					}
-					
 					if (ogtitle != "")
 						cq = cq + ogtitle + ". ";
 					else {
 						cq = cq + d.title.split('|').join(' ') + ". ";
 					}
-					
 					if (ogdes != "")
 						cq = cq + ogdes + ". ";
 					else if (mtdes != "")
 						cq = cq + mtdes + ". ";
-					
 					f.apply(f.detect(), cq)
 				},
 				ajax: function (e, g) {
