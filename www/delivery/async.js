@@ -1,4 +1,4 @@
-(function (d, c) {
+function adrshow(d, c) {
 	var a = "<?php echo $etag; ?>";
 	c.reviveAsync = c.reviveAsync || {};
 	(function (e) {
@@ -200,30 +200,6 @@
 					}
 					return l
 				},
-				createFrame: function (h) {
-					var e = d.createElement("IFRAME"),
-					g = e.style;
-					e.scrolling = "no";
-					e.frameBorder = 0;
-					e.width = h.width > 0 ? h.width : 0;
-					e.height = h.height > 0 ? h.height : 0;
-					g.border = 0;
-					g.overflow = "hidden";
-					e.src = decodeURIComponent(h.html.split("oadest=")[1].split("' target=")[0]);
-					return e
-				},
-				loadFrame: function (g, e) {
-					var h = g.contentDocument || g.contentWindow.document;
-					h.open();
-					h.writeln("<!DOCTYPE html>");
-					h.writeln("<html>");
-					h.writeln('<head><base target="_top"><meta charset="UTF-8"></head>');
-					h.writeln('<body border="0" margin="0" style="margin: 0; padding: 0">');
-					h.writeln(e);
-					h.writeln("</body>");
-					h.writeln("</html>");
-					h.close()
-				},
 				spc: function (l) {
 					this.dispatchEvent("receive", l);
 					for (var e in l) {
@@ -239,10 +215,8 @@
 										break;
 									}
 								}
-								if (r == 3) {
-									var k = f.createFrame(p);
-									n.appendChild(k);
-									o.parentNode.replaceChild(n, o);
+								if (r == 3 && window.promotion3!=undefined) {
+									window.promotion3(o, p)
 								} else {
 									n.style.textDecoration = "none";
 									n.innerHTML = p.html;
@@ -289,4 +263,4 @@
 			console.log(b)
 		}
 	}
-})(document, window);
+};
