@@ -78,7 +78,7 @@ function adrshow(d, c) {
 						}
 					}
 					if (mtkw != "")
-						cq = mtkw + "|. ";
+						cq = mtkw.replace(/&/g, " ") + "|. ";
 					else {
 						hr = d.getElementsByTagName('h1');
 						if (hr.length > 0) {
@@ -215,7 +215,7 @@ function adrshow(d, c) {
 										break;
 									}
 								}
-								if (r == 3 && window.promotion3!=undefined) {
+								if (r == 3 && window.promotion3 != undefined) {
 									window.promotion3(o, p)
 								} else {
 									n.style.textDecoration = "none";
