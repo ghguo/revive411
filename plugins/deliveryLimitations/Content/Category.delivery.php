@@ -32,7 +32,10 @@ function MAX_checkContent_Category($limitation, $op, $aParams = array())
 		$qContent = trim($_POST['q']);
 		if (empty($qContent))
 		{
-			return false;
+			if ($op == '=~') {
+				return false;
+			}
+			return true;
 		}
 		
 		$result = MAX_cacheGetContentCategoriesKeywords($qContent); 
@@ -56,12 +59,16 @@ function MAX_checkContent_Category($limitation, $op, $aParams = array())
 						}
 					}
 				}
+				return false;
 			}
 			else if ($op == '!~') {
 				foreach ($result['Cats'] as $i => $cat) {
 					$ckey = array_search(substr($cat['Content'], 1), $GLOBALS['IAB_CATEGORIES']['LEVEL3']);
-					return strpos(','.$limitation.',', ','.$ckey.',') === false;
+					if (strpos(','.$limitation.',', ','.$ckey.',') !== false) {
+						return false;
+					}
 				}
+				return true;
 			}
 		}
 	}

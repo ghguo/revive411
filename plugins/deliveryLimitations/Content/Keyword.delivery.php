@@ -42,36 +42,27 @@ function MAX_checkContent_Keyword($limitation, $op, $aParams = array())
 		if (!empty($result))
 			$result = json_decode($result, true);
 		
-		$keyW = '';
 		if (!empty($result) && !empty($result['Keywords']) && count($result['Keywords']) > 0)
 		{
-			$found = false;
-			foreach ($result['Keywords'] as $res) {
-				if (MAX_stringContains($limitation, $res['Content'])) {
-					$found = true;
-					break;
+			if ($op == '=~') {
+				foreach ($result['Keywords'] as $res) {
+					if (MAX_limitationsMatchStringValue($limitation, $res['Content'], $op)) {
+						return true;
+					}
 				}
-			}
-			
-			if ($found) {
-				if ($op == '=~') {
-					return true;
-				} 
 				return false;
 			}
-			else {
-				if ($op == '=~') {
-					return false;
-				} 
+			else if ($op == '!~') {
+				foreach ($result['Keywords'] as $res) {
+					if (MAX_limitationsMatchStringValue($limitation, $res['Content'], '=~')) {
+						return false;
+					}
+				}
 				return true;
 			}
 		}
 	}
 
-	if ($op == '=~') {
-		return false;
-	} 
-
-	return true;
+	return false;
 }
 ?>
