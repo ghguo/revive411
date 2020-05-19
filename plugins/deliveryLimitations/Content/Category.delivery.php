@@ -42,50 +42,34 @@ function MAX_checkContent_Category($limitation, $op, $aParams = array())
 		if (!empty($result))
 			$result = json_decode($result, true);
 		
-		$cats = array();
 		if (!empty($result) && !empty($result['Cats']) && count($result['Cats']) > 0)
 		{
-			foreach ($result['Cats'] as $c){
-				array_push($cats, $c['Content']);
+			if (!isset($GLOBALS['IAB_CATEGORIES']['LEVEL3']))
+			{
+				include(MAX_PATH . '/plugins/deliveryLimitations/Content/iab-category.php');
 			}
-		}
-	}
-	else if (!empty($_POST['category'])) {
-		$cats = explode("|", $_POST['category']);
-	}
-		
-//	if (!empty($result) && !empty($result['Cats']) && count($result['Cats']) > 0)
-	if (!empty($cats) && count($cats) > 0)
-	{
-		if (!isset($GLOBALS['IAB_CATEGORIES']['LEVEL3']))
-		{
-			include(MAX_PATH . '/plugins/deliveryLimitations/Content/iab-category.php');
-		}
-		if ($op == '=~') {
-			$limits = explode(",", $limitation);
-			$ckey='';
-//			foreach ($result['Cats'] as $cat) {
-			foreach ($cats as $cat) {
-//				$ckey = array_search(substr($cat['Content'], 1), $GLOBALS['IAB_CATEGORIES']['LEVEL3']);
-				$ckey = array_search(substr($cat, 1), $GLOBALS['IAB_CATEGORIES']['LEVEL3']);
-				foreach ($limits as $lmt) {
-					if ($lmt == substr($ckey, 0, strlen($lmt))) {
-						return true;
+			if ($op == '=~') {
+				$limits = explode(",", $limitation);
+				$ckey='';
+				foreach ($result['Cats'] as $cat) {
+					$ckey = array_search(substr($cat['Content'], 1), $GLOBALS['IAB_CATEGORIES']['LEVEL3']);
+					foreach ($limits as $lmt) {
+						if ($lmt == substr($ckey, 0, strlen($lmt))) {
+							return true;
+						}
 					}
 				}
+				return false;
 			}
-			return false;
-		}
-		else if ($op == '!~') {
-//			foreach ($result['Cats'] as $i => $cat) {
-			foreach ($cats as $i => $cat) {
-//				$ckey = array_search(substr($cat['Content'], 1), $GLOBALS['IAB_CATEGORIES']['LEVEL3']);
-				$ckey = array_search(substr($cat, 1), $GLOBALS['IAB_CATEGORIES']['LEVEL3']);
-				if (strpos(','.$limitation.',', ','.$ckey.',') !== false) {
-					return false;
+			else if ($op == '!~') {
+				foreach ($result['Cats'] as $i => $cat) {
+					$ckey = array_search(substr($cat['Content'], 1), $GLOBALS['IAB_CATEGORIES']['LEVEL3']);
+					if (strpos(','.$limitation.',', ','.$ckey.',') !== false) {
+						return false;
+					}
 				}
+				return true;
 			}
-			return true;
 		}
 	}
 
