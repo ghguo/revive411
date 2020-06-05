@@ -4483,37 +4483,36 @@ function rtb()
 				}
 			}
 		}
-		$rId = 0;
 		if (count($tagAds)>1){
 			$rId = mt_rand(0, count($tagAds)-1);
+			$aBanner = $aAds[$tagAds[$rId]];
+			$imageUrl = _adRenderBuildFileUrl($aBanner);
+			$clickUrl = _adRenderBuildClickUrl($aBanner,$aBanner['zone_id'],'','',true,false);
+			if (!empty($clickUrl)) {  $status = _adRenderBuildStatusCode($aBanner);
+			$clickTag = "<a href='".htmlspecialchars($clickUrl, ENT_QUOTES)."' target='{target}'$status>";
+			$clickTagEnd = '</a>';
+			} else {
+				$clickTag = '';
+				$clickTagEnd = '';
+			}
+			if (!empty($imageUrl)) {
+				$imgStatus = empty($clickTag) && !empty($status) ? $status : '';
+				$width = !empty($aBanner['width']) ? $aBanner['width'] : 0;
+				$height = !empty($aBanner['height']) ? $aBanner['height'] : 0;
+				$alt = !empty($aBanner['alt']) ? htmlspecialchars($aBanner['alt'], ENT_QUOTES) : '';
+				$imageTag = "$clickTag<img src='".htmlspecialchars($imageUrl, ENT_QUOTES)."' width='$width' height='$height' alt='$alt' title='$alt' border='0'$imgStatus />$clickTagEnd";
+			} else {
+				$imageTag = '';
+			}
+			$bannerText = $withText && !empty($aBanner['bannertext']) ? "<br />$clickTag" . htmlspecialchars($aBanner['bannertext'], ENT_QUOTES) . "$clickTagEnd" : '';
+			$beaconTag = _adRenderImageBeacon($aBanner, 0, '', $_POST['ref'], '');
+			$code = $imageTag . $bannerText . $beaconTag;
+			$code = str_replace('{random}', MAX_getRandomNumber(), $code);
+			$code = str_replace('{target}', '_blank', $code);
+			
+			$tad = MAX_commonConvertEncoding($code, 'UTF-8');
+			array_push($outAds, array('tag' => $id, 'ad' => $tad, 'width' => $width, 'height' => $height));
 		}
-		$aBanner = $aAds[$tagAds[$rId]];
-		$imageUrl = _adRenderBuildFileUrl($aBanner);
-		$clickUrl = _adRenderBuildClickUrl($aBanner,$aBanner['zone_id'],'','',true,false);
-		if (!empty($clickUrl)) {  $status = _adRenderBuildStatusCode($aBanner);
-		$clickTag = "<a href='".htmlspecialchars($clickUrl, ENT_QUOTES)."' target='{target}'$status>";
-		$clickTagEnd = '</a>';
-		} else {
-			$clickTag = '';
-			$clickTagEnd = '';
-		}
-		if (!empty($imageUrl)) {
-			$imgStatus = empty($clickTag) && !empty($status) ? $status : '';
-			$width = !empty($aBanner['width']) ? $aBanner['width'] : 0;
-			$height = !empty($aBanner['height']) ? $aBanner['height'] : 0;
-			$alt = !empty($aBanner['alt']) ? htmlspecialchars($aBanner['alt'], ENT_QUOTES) : '';
-			$imageTag = "$clickTag<img src='".htmlspecialchars($imageUrl, ENT_QUOTES)."' width='$width' height='$height' alt='$alt' title='$alt' border='0'$imgStatus />$clickTagEnd";
-		} else {
-			$imageTag = '';
-		}
-		$bannerText = $withText && !empty($aBanner['bannertext']) ? "<br />$clickTag" . htmlspecialchars($aBanner['bannertext'], ENT_QUOTES) . "$clickTagEnd" : '';
-		$beaconTag = _adRenderImageBeacon($aBanner, 0, '', $_POST['ref'], '');
-		$code = $imageTag . $bannerText . $beaconTag;
-		$code = str_replace('{random}', MAX_getRandomNumber(), $code);
-		$code = str_replace('{target}', '_blank', $code);
-		
-		$tad = MAX_commonConvertEncoding($code, 'UTF-8');
-		array_push($outAds, array('tag' => $id, 'ad' => $tad, 'width' => $width, 'height' => $height));
 	}
 	
 	return $outAds;
