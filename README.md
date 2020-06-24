@@ -13,7 +13,7 @@ You can find more about Revive Adserver at https://www.revive-adserver.com/
 
 # Usage Of Code
 
-You can use the code as is for your ad server. It has all Revive Adserver v4.1.1 features/functionality plus Content Target and RTB/HB capabilities.
+You can use the code as is. It has all Revive Adserver v4.1.1 features/functionality plus Content Target and RTB/HB capabilities.
 
 You can also use the code as examples to modify your own adserver to add Content Target and RTB/HB capabilities.
 
@@ -22,9 +22,9 @@ Yoy are welcome to migrate Content Target Plugin and RTB/HB to newer versions of
 
 # Content Target Plugin & RTB/HB
 
-The Content Target Plugin is implemented in plugins\deliveryLimitations\Content
+The code of Content Target Plugin is implemented in plugins\deliveryLimitations\Content
 
-The RTB/HB is in www\delivery\asyncspc.php
+The code of RTB/HB is in www\delivery\asyncspc.php
 
 
 # License
