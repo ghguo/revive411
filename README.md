@@ -1,28 +1,28 @@
-# Revive Adserver
-#### The world's most popular free, open source ad serving system
+# ADR Adserver - An Open Source Adserver With Content Target Capability
+**ADR Adserver is based on open source Revive Adserver v4.1.1.** that enables advertisers to:
 
-**Revive Adserver is an open source ad serving tool** that enables publishers to:
+* Target ads to published content using IAB Categories and keywords;
+* Receive Real Time Bidding (RTB)/Header Bidding (HB) requests.
 
-* Serve ads on their websites;
+With Content Target Plugin, an advertiser can specify which IAB Categories or keywords an ad is targeted to. When a request with the targeted IAB Categories and the targeted keywords is received, the ad is matched and delivered.
 
-* Manage their campaigns from different advertisers and/or ad networks using the simple, easy-to-use interface;
-
-* Track and report on campaign success, including click-through rates;
-
-* Set rules to target the delivery of campaigns, or even ads, to specific users, to help maximise the effectiveness of campaigns.
+You can find more about IAB Categoies at https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy/
 
 
+# Usage Of Code
 
-# Download
+You can use the code as is for your ad server. It has all Revive Adserver v4.1.1 features/functionality plus Content Target and RTB/HB capabilities.
 
-**DO NOT DOWNLOAD AS A ZIP FILE FROM GITHUB**
+You can also use the code as examples to modify your own adserver to add Content Target and RTB/HB capabilities.
 
-Download the latest version from: http://www.revive-adserver.com/download/
+Yoy are welcome to integrate to migrate Content Target Plugin and RTB/HB to newer version of Revive Adserver.
 
-Revive Adserver as available from github as a zip file is not suitable for installation on a server. It contains a number of files that are for development only, and are removed during the release packaging process.
 
-Please ONLY download Revive Adserver as a release package from the Revive Adserver website at http://www.revive-adserver.com/.
+# Content Target Plugin & RTB/HB
 
+The Content Target Plugin is implemented in plugins\deliveryLimitations\Content
+
+The RTB/HB is in www\delivery\asyncspc.php
 
 
 # License
@@ -44,6 +44,3 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 ------------------------------------------------------------------------
-
-This product includes GeoLite data created by MaxMind, available from the 
-http://www.maxmind.com/ website.
