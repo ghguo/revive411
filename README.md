@@ -8,6 +8,8 @@ With Content Target Plugin, an advertiser can specify which IAB Categories or ke
 
 You can find more about IAB Categoies at https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy/
 
+You can find more about Revive Adserver at https://www.revive-adserver.com/
+
 
 # Usage Of Code
 
