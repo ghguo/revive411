@@ -15,7 +15,7 @@ You can use the code as is for your ad server. It has all Revive Adserver v4.1.1
 
 You can also use the code as examples to modify your own adserver to add Content Target and RTB/HB capabilities.
 
-Yoy are welcome to integrate to migrate Content Target Plugin and RTB/HB to newer version of Revive Adserver.
+Yoy are welcome to migrate Content Target Plugin and RTB/HB to newer version of Revive Adserver.
 
 
 # Content Target Plugin & RTB/HB
