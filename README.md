@@ -1,5 +1,5 @@
 # ADR Adserver - An Open Source Adserver With Content Target Capability
-**ADR Adserver is based on open source Revive Adserver v4.1.1.** that enables advertisers to:
+**ADR Adserver is based on open source Revive Adserver v4.1.1.** It enables advertisers to:
 
 * Target ads to published content using IAB Categories and keywords;
 * Receive Real Time Bidding (RTB)/Header Bidding (HB) requests.
