@@ -4405,7 +4405,7 @@ SELECT bannerid AS ad_id, storagetype AS type, b.campaignid, storagetype, filena
 FROM revive.rv_banners as b JOIN
 revive.rv_ad_zone_assoc az on b.bannerid = az.ad_id JOIN
 revive.rv_campaigns c on c.campaignid = b.campaignid
-		WHERE compiledlimitation<>'' and ({$widHei})";
+		WHERE ({$widHei})";
 	$rAdsInfo = OA_Dal_Delivery_query($query);
 	if (!OA_Dal_Delivery_isValidResult($rAdsInfo)) {
 		return (defined('OA_DELIVERY_CACHE_FUNCTION_ERROR')) ? OA_DELIVERY_CACHE_FUNCTION_ERROR : false;
@@ -4423,47 +4423,29 @@ revive.rv_campaigns c on c.campaignid = b.campaignid
 
 function rtb()
 {
-	$tags = explode("tag", $_POST['tags']);
+	$tags = json_decode($_POST['tags']);
 	$tagArray = array();
-	$allSizes = array();
 	$cacheName = '';
-	foreach ($tags as $id => $tag){
-		if ($id ==0) continue;
-		$details = explode("|", $tag);
-		$sizs = [];
-		$cpm = '';
-		foreach ($details as $d => $detail){
-			if ($d == 0) continue;
-			
-			if ($d == 1) {
-				$cpm = explode("-", $detail)[1];
-			}
-			else if (!empty($detail)) {
-				$siz = explode("-", $detail)[1];
-				array_push($sizs, $siz);
-				if (!in_array($siz, $allSizes)) {
-					array_push($allSizes, $siz);
-				}
-			}
-		}
-		$tagArray[$details[0]] = array(
-		'cpm' => $cpm,
-		'sizes' => $sizs,
+	$cpmWidHei = "";
+	foreach ($tags as $tag){
+		$tagArray[$tag->id] = array(
+		'cpm' => $tag->cpm,
+		'sizes' => $tag->sizes,
 		);
-		$cacheName .= '_'. $details[0];
+		
+		$wiHe = "";
+		foreach ($tag->sizes as $az){
+			$wiHe .= " or width=".$az[0]." and height=".$az[1];
+		}
+		$cpmWidHei .= " or revenue>=".$tag->cpm." and (".substr($wiHe, 4).")";
+		
+		$cacheName .= '_'. $tag->id;
 	}
-	$widHei = "";
-	foreach ($allSizes as $az){
-		$wh = explode("x", $az);
-		$widHei .= " or width=".$wh[0]." and height=".$wh[1];
-	}
-	if (!empty($widHei))
-		$widHei = substr($widHei, 4);
-	
+	$cpmWidHei = substr($cpmWidHei, 4);
 	$sName = 'tags'.$cacheName;
 	if (($aAds = OA_Delivery_Cache_fetch($sName)) === false) {
 		MAX_Dal_Delivery_Include();
-		$aAds = rtbAdsRetrieve($widHei);
+		$aAds = rtbAdsRetrieve($cpmWidHei);
 		$aAds = OA_Delivery_Cache_store_return($sName, $aAds);
 	}
 	$aAdIds = array();
@@ -4474,50 +4456,55 @@ function rtb()
 	foreach ($tagArray as $id => $t){
 		$sizs = $t['sizes'];
 		$tagAds = array();
-		foreach ($aAdIds as $i => $aAdId){
+		foreach ($aAdIds as $aAdId){
 			$ad = $aAds[$aAdId];
 			if (empty($ad['revenue']) || $ad['revenue'] >= $t['cpm']) {
-				$sz = $ad['width'].'x'. $ad['height'];
-				if (in_array($sz, $sizs)){
-					array_push($tagAds, $aAdId);
+				foreach ($sizs as $sz) {
+					if ($sz[0]==$ad['width'] && $sz[1]==$ad['height']){
+						array_push($tagAds, $aAdId);
+					}
 				}
 			}
 		}
+		if (empty($tagAds)) {
+			continue;
+		}
+		
+		$rId = 0;
 		if (count($tagAds)>1){
 			$rId = mt_rand(0, count($tagAds)-1);
-			$aBanner = $aAds[$tagAds[$rId]];
-			$imageUrl = _adRenderBuildFileUrl($aBanner);
-			$clickUrl = _adRenderBuildClickUrl($aBanner,$aBanner['zone_id'],'','',true,false);
-			if (!empty($clickUrl)) {  $status = _adRenderBuildStatusCode($aBanner);
-			$clickTag = "<a href='".htmlspecialchars($clickUrl, ENT_QUOTES)."' target='{target}'$status>";
-			$clickTagEnd = '</a>';
-			} else {
-				$clickTag = '';
-				$clickTagEnd = '';
-			}
-			if (!empty($imageUrl)) {
-				$imgStatus = empty($clickTag) && !empty($status) ? $status : '';
-				$width = !empty($aBanner['width']) ? $aBanner['width'] : 0;
-				$height = !empty($aBanner['height']) ? $aBanner['height'] : 0;
-				$alt = !empty($aBanner['alt']) ? htmlspecialchars($aBanner['alt'], ENT_QUOTES) : '';
-				$imageTag = "$clickTag<img src='".htmlspecialchars($imageUrl, ENT_QUOTES)."' width='$width' height='$height' alt='$alt' title='$alt' border='0'$imgStatus />$clickTagEnd";
-			} else {
-				$imageTag = '';
-			}
-			$bannerText = $withText && !empty($aBanner['bannertext']) ? "<br />$clickTag" . htmlspecialchars($aBanner['bannertext'], ENT_QUOTES) . "$clickTagEnd" : '';
-			$beaconTag = _adRenderImageBeacon($aBanner, 0, '', $_POST['ref'], '');
-			$code = $imageTag . $bannerText . $beaconTag;
-			$code = str_replace('{random}', MAX_getRandomNumber(), $code);
-			$code = str_replace('{target}', '_blank', $code);
-			
-			$tad = MAX_commonConvertEncoding($code, 'UTF-8');
-			array_push($outAds, array('tag' => $id, 'ad' => $tad, 'width' => $width, 'height' => $height));
 		}
+		$aBanner = $aAds[$tagAds[$rId]];
+		$imageUrl = _adRenderBuildFileUrl($aBanner);
+		$clickUrl = _adRenderBuildClickUrl($aBanner,$aBanner['zone_id'],'','',true,false);
+		if (!empty($clickUrl)) {  $status = _adRenderBuildStatusCode($aBanner);
+		$clickTag = "<a href='".htmlspecialchars($clickUrl, ENT_QUOTES)."' target='{target}'$status>";
+		$clickTagEnd = '</a>';
+		} else {
+			$clickTag = '';
+			$clickTagEnd = '';
+		}
+		if (!empty($imageUrl)) {
+			$imgStatus = empty($clickTag) && !empty($status) ? $status : '';
+			$width = !empty($aBanner['width']) ? $aBanner['width'] : 0;
+			$height = !empty($aBanner['height']) ? $aBanner['height'] : 0;
+			$alt = !empty($aBanner['alt']) ? htmlspecialchars($aBanner['alt'], ENT_QUOTES) : '';
+			$imageTag = "$clickTag<img src='".htmlspecialchars($imageUrl, ENT_QUOTES)."' width='$width' height='$height' alt='$alt' title='$alt' border='0'$imgStatus />$clickTagEnd";
+		} else {
+			$imageTag = '';
+		}
+		$bannerText = $withText && !empty($aBanner['bannertext']) ? "<br />$clickTag" . htmlspecialchars($aBanner['bannertext'], ENT_QUOTES) . "$clickTagEnd" : '';
+		$beaconTag = _adRenderImageBeacon($aBanner, 0, '', $_POST['ref'], '');
+		$code = $imageTag . $bannerText . $beaconTag;
+		$code = str_replace('{random}', MAX_getRandomNumber(), $code);
+		$code = str_replace('{target}', '_blank', $code);
+		
+		$tad = MAX_commonConvertEncoding($code, 'UTF-8');
+		array_push($outAds, array('tag' => $id, 'ad' => $tad, 'width' => $width, 'height' => $height));
 	}
 	
 	return $outAds;
 }
-
 
 MAX_commonSetNoCacheHeaders();
 MAX_commonRegisterGlobalsArray(array('zones' ,'source', 'block', 'blockcampaign', 'exclude', 'q', 'prefix'));
