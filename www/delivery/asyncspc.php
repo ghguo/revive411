@@ -4398,6 +4398,7 @@ return '"'.$string.'"';
 function rtbAdsRetrieve($widHei, $aAds, $aAdIds)
 {
 	$aAds = array();
+	$lim = (!empty($_POST['category']) || !empty($_POST['keywords'])) ? "compiledlimitation<>'' and " : "";
 	$query = "
 SELECT bannerid AS ad_id, storagetype AS type, b.campaignid, storagetype, filename, imageurl, width, height, b.weight, url, compiledlimitation, acl_plugins
 ,az.zone_id
@@ -4405,7 +4406,7 @@ SELECT bannerid AS ad_id, storagetype AS type, b.campaignid, storagetype, filena
 FROM revive.rv_banners as b JOIN
 revive.rv_ad_zone_assoc az on b.bannerid = az.ad_id JOIN
 revive.rv_campaigns c on c.campaignid = b.campaignid
-		WHERE ({$widHei})";
+		WHERE {$lim}({$widHei})";
 	$rAdsInfo = OA_Dal_Delivery_query($query);
 	if (!OA_Dal_Delivery_isValidResult($rAdsInfo)) {
 		return (defined('OA_DELIVERY_CACHE_FUNCTION_ERROR')) ? OA_DELIVERY_CACHE_FUNCTION_ERROR : false;
@@ -4437,7 +4438,7 @@ function rtb()
 		foreach ($tag->sizes as $az){
 			$wiHe .= " or width=".$az[0]." and height=".$az[1];
 		}
-		$cpmWidHei .= " or revenue>=".$tag->cpm." and (".substr($wiHe, 4).")";
+		$cpmWidHei .= " or (revenue>=".$tag->cpm." or revenue is null) and (".substr($wiHe, 4).")";
 		
 		$cacheName .= '_'. $tag->id;
 	}
