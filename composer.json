@@ -28,7 +28,7 @@
         "jeremykendall/php-domain-parser": "~2.0",
 
         "figdice/asseteer": "dev-master",
-        "tinymce/tinymce": "^4.6"
+        "tinymce/tinymce": "^5.9"
     },
     "require-dev": {
         "symfony/finder": "^3.3"
